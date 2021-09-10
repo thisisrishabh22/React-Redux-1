@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function CardPost() {
+export default function CardPost({ post }) {
     const classes = useStyles();
     const theme = useTheme();
 
@@ -39,17 +39,17 @@ export default function CardPost() {
         <Card className={classes.root}>
             <CardMedia
                 className={classes.cover}
-                image={"https://picsum.photos/id/" + Math.floor(Math.random() * (19 - 2 )* 2 ).toString() + "/600"}
+                image={"https://picsum.photos/id/" + Math.floor(Math.random() * (19 - 2) * 2).toString() + "/600"}
                 title="Live from space album cover"
             />
             <div className={classes.details}>
                 <CardContent className={classes.content}>
                     <Typography component="h5" variant="h5">
-                        Live From Space
-          </Typography>
-                    <Typography variant="subtitle1" color="textSecondary">
-                        Mac Miller
-          </Typography>
+                        {post.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p"F>
+                        {post.body}
+                    </Typography>
                 </CardContent>
             </div>
         </Card>

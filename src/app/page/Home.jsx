@@ -9,7 +9,9 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            <Card />
+            {state && state.posts.map((post)=>(
+                <Card post={post} />
+            ))}
         </>
     )
 }
