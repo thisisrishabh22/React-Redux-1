@@ -8,7 +8,11 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
-        height: 220,
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: "column",
+            height: "100%",
+        },
+        minHeight: 220,
         margin: 10
     },
     details: {
@@ -19,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
         flex: "1 0 auto",
     },
     cover: {
+        [theme.breakpoints.down('sm')]: {
+            height: "100%",
+            minHeight: 120
+        },
         width: "100%",
     },
 }));
