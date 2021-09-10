@@ -8,26 +8,18 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
+        height: 220,
+        margin: 10
     },
     details: {
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
     },
     content: {
         flex: "1 0 auto",
     },
     cover: {
-        width: 151,
-    },
-    controls: {
-        display: "flex",
-        alignItems: "center",
-        paddingLeft: theme.spacing(1),
-        paddingBottom: theme.spacing(1),
-    },
-    playIcon: {
-        height: 38,
-        width: 38,
+        width: "100%",
     },
 }));
 
@@ -47,7 +39,7 @@ export default function CardPost({ post }) {
                     <Typography component="h5" variant="h5">
                         {post.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p"F>
+                    <Typography variant="body2" color="textSecondary" component="p" F>
                         {post.body}
                     </Typography>
                 </CardContent>

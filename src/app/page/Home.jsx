@@ -1,3 +1,4 @@
+import { Grid } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Card from '../components/Card';
@@ -9,9 +10,11 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            {state && state.posts.map((post)=>(
-                <Card post={post} />
-            ))}
+            <Grid container>
+                {state && state.posts.map((post) => (
+                    <Grid item md={6} sm={12}><Card post={post} /></Grid>
+                ))}
+            </Grid>
         </>
     )
 }
