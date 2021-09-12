@@ -33,8 +33,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CardPost({ post }) {
     const classes = useStyles();
-    const theme = useTheme();
-
     return (
         <Card className={classes.root}>
             <CardMedia

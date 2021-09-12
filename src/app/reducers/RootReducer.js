@@ -1,3 +1,4 @@
+import * as actionTypes from "../utils/Actions.types";
 const initState = {
   posts: [
     {
@@ -23,5 +24,13 @@ const initState = {
 };
 
 export const RootReducer = (state = initState, action) => {
+  switch (action.type) {
+    case actionTypes.DELETE_POST:
+      let newPosts = state.posts.filter((item) => item.id === parseInt(action.id));
+      return {
+        ...state,
+        posts: newPosts,
+      };
+  }
   return state;
 };

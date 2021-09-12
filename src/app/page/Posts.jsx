@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useContext, useEffect } from 'react';
+import { useSelector, ReactReduxContext } from 'react-redux';
 import { useParams } from 'react-router';
 import Navbar from '../components/Navbar';
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -7,7 +7,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import { Box, Grid } from '@material-ui/core';
+import { Box, Button, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Posts = () => {
+
+    const { store } = useContext(ReactReduxContext);
+    console.log(store)
     const classes = useStyles();
 
     const slug = useParams();
@@ -78,6 +81,9 @@ const Posts = () => {
                     </Card>)}
                 </Grid>
             </Grid></Box>
+            <Box style={{ padding: 10, display: "flex", justifyContent: "center" }}>
+                <Button variant="contained" color="secondary">Delete Post</Button>
+            </Box>
         </>
     )
 }
