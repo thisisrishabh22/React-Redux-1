@@ -9,7 +9,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { Box, Button, Grid } from '@material-ui/core';
 import { deletePost } from '../utils/ActionConstructor';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import DeleteIcon from '@material-ui/icons/Delete';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+
 const useStyles = makeStyles((theme) => ({
     main: {
         display: "flex",
@@ -96,8 +99,8 @@ const Posts = () => {
             </Grid></Box>
             <Box style={{ padding: 30, display: "flex", justifyContent: "center" }}>
                 {
-                    post ? <Button disableElevation variant="contained" color="secondary" onClick={() => store.dispatch(deletePost(parseInt(slug.id)))}>Delete Post</Button> :
-                       <Link to="/"> <Button disableElevation variant="contained" color="primary">Go to Home Page</Button></Link>
+                    post ? <Button disableElevation variant="contained" color="secondary" startIcon={<DeleteIcon />} onClick={() => store.dispatch(deletePost(parseInt(slug.id)))}>Delete Post</Button> :
+                        <Link to="/"> <Button disableElevation variant="contained" startIcon={<ArrowBackIosIcon />} color="primary">Go to Home Page</Button></Link>
                 }
             </Box>
         </>
