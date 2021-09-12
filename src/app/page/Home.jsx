@@ -13,7 +13,7 @@ const Home = () => {
             <Navbar />
             <Grid container>
                 {state && state.posts.map((post) => (
-                    <Grid item md={6} sm={6} xs={12} ><Box style={{ margin: 10 }}><Link to="/about"><Card post={post} /></Link></Box></Grid>
+                    <Grid item md={6} sm={6} xs={12} ><Box style={{ margin: 10 }}><Link to={"/posts/"+post.id+""}><Card post={post} /></Link></Box></Grid>
                 ))}
             </Grid>
         </>
