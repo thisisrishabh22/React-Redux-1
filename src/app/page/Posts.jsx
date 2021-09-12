@@ -7,9 +7,14 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import { Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
+    main: {
+        display: "flex",
+        justifyContent: "center",
+        width: "min"
+    },
     root: {
         display: "flex",
         [theme.breakpoints.down('sm')]: {
@@ -17,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
             height: "100%",
         },
         minHeight: 220,
-        margin: 10
+        margin: 10,
+        maxWidth: 600
     },
     details: {
         display: "flex",
@@ -37,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Posts = () => {
     const classes = useStyles();
-    const theme = useTheme();
 
     const slug = useParams();
     console.log(slug)
@@ -52,7 +57,7 @@ const Posts = () => {
     return (
         <>
             <Navbar />
-            <Grid container>
+            <Box className={classes.main}> <Grid container style={{ width: "fit-content" }}>
                 <Grid item sm={12}>
                     {post && (<Card className={classes.root}>
                         <CardMedia
@@ -72,7 +77,7 @@ const Posts = () => {
                         </div>
                     </Card>)}
                 </Grid>
-            </Grid>
+            </Grid></Box>
         </>
     )
 }
