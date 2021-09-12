@@ -39,7 +39,7 @@ export default function CardPost({ post }) {
         <Card className={classes.root}>
             <CardMedia
                 className={classes.cover}
-                image={"https://picsum.photos/id/" + Math.floor(Math.random() * (19 - 2) * 2).toString() + "/600"}
+                image={"https://picsum.photos/id/" + post.id + "/600"}
                 title="Live from space album cover"
             />
             <div className={classes.details}>
