@@ -26,7 +26,7 @@ const initState = {
 export const RootReducer = (state = initState, action) => {
   switch (action.type) {
     case actionTypes.DELETE_POST:
-      let newPosts = state.posts.filter((item) => item.id === parseInt(action.id));
+      let newPosts = state.posts.filter((item) => item.id !== action.id);
       return {
         ...state,
         posts: newPosts,
